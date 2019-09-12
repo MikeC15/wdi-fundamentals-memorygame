@@ -28,8 +28,7 @@ const cardsInPlay = [];
 
 
 
-function checkForMatch () {
-	this.setAttribute('src', cards[cardId].cardImage); //cardId not defined?
+function checkForMatch () { //cardId not defined?
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You found a match!");
 		}
@@ -42,6 +41,7 @@ function flipCard() {
 	var cardId = this.getAttribute('data-id');
 	console.log("User flipped " + cards[cardId].rank);
 	cardsInPlay.push(cards[cardId].rank);
+	this.setAttribute('src', cards[cardId].cardImage);
 	checkForMatch();						//cardId not defined?		
 	console.log(cards[cardId].cardImage);
 	console.log(cards[cardId].suit);
